@@ -54,6 +54,6 @@ export function ButtonLink({ href, children, variant = "ink", external = false }
 
 /** Where each product lives. Update when subdomains are connected. */
 export const PRODUCTS = {
-  hazardsign: "https://hazardsign-ai.vercel.app",
+  hazardsign: "https://sign.hazardsecurity.xyz",
 };
 export const GITHUB = "https://github.com/hazardsecurity";
