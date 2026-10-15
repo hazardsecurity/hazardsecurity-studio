@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <pattern id="t" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+      <rect width="14" height="14" fill="#ffd400"/>
+      <rect width="7" height="14" fill="#0f0f0e"/>
+    </pattern>
+    <clipPath id="c"><rect x="4" y="4" width="56" height="56" rx="14"/></clipPath>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="#0f0f0e"/>
+  <rect x="4" y="4" width="56" height="56" fill="url(#t)" clip-path="url(#c)"/>
+</svg>

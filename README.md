@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Hazardsecurity studio
 
-## Getting Started
+Homepage for **hazardsecurity.xyz**: an independent studio building focused software for everyday jobs. Each product lives on its own subdomain (for example `sign.hazardsecurity.xyz` for HazardSign AI).
 
-First, run the development server:
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Production: `npm run build && npm start`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Edit it
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/components/ui.tsx`: wordmark, buttons, and `PRODUCTS` (where each product's link points; update when a subdomain is connected).
+- `src/components/Hero.tsx`: navigation, headline and the crossing hazard tapes (they drift and speed up with scroll).
+- `src/components/Sections.tsx`: the tool shelf, principles and closing. To add a product, replace an "In the workshop" card with a live one.
+- `src/app/globals.css`: colours, type scale and buttons.
 
-## Learn More
+## Design
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Concept:** a workshop of everyday software. Caution-tape yellow `#ffd400` and ink `#0f0f0e` on bone `#efede6`; HazardSign keeps its own orange on its card.
+- **Type:** Bricolage Grotesque (display, variable width and optical size) with Geist Mono for labels, via `next/font`.
+- **Motion:** Motion (`motion/react`) with one house curve `cubic-bezier(.4,0,.05,1)`; masked word reveal and a highlighter swipe on the headline; hazard tapes driven by scroll velocity; letter-roll buttons with arrow swap. Reduced motion is respected.
