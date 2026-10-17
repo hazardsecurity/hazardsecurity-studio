@@ -1,7 +1,7 @@
 import { Hero, Nav } from "@/components/Hero";
 import { Closing, Principles, Tools } from "@/components/Sections";
 
-// Structured data: the studio, its website and its live product.
+// Structured data: the studio, its website and its live products.
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
@@ -22,6 +22,15 @@ const jsonLd = {
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web browser",
       offers: { "@type": "Offer", price: "500", priceCurrency: "NGN" },
+      publisher: { "@id": "https://hazardsecurity.xyz/#org" },
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "Eyeline",
+      url: "https://eyeline.hazardsecurity.xyz/",
+      applicationCategory: "MultimediaApplication",
+      operatingSystem: "Web browser",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "NGN" },
       publisher: { "@id": "https://hazardsecurity.xyz/#org" },
     },
   ],

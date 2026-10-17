@@ -55,8 +55,32 @@ export function Tools() {
             <ButtonLink href={PRODUCTS.hazardsign} variant="ink" external>Open HazardSign</ButtonLink>
           </motion.li>
 
-          {/* 02, 03 — honest placeholders */}
-          {["02", "03"].map((n) => (
+          {/* 02 — live */}
+          <motion.li className="tool tool--eye" variants={card} transition={{ duration: 1, ease: EASE }}>
+            <div className="tool__top">
+              <span className="mono tool__no">02</span>
+              <span className="tool__status mono"><i />Live</span>
+            </div>
+            <div className="tool__brand">
+              <Image src="/eyeline-mark.svg" alt="" width={72} height={72} unoptimized />
+              <div>
+                <h3 className="h3">Eyeline</h3>
+                <p className="mono tool__kind">Teleprompter</p>
+              </div>
+            </div>
+            <p className="body tool__desc">
+              Read your script at the lens while your camera records. It scrolls at the words per minute you choose, mirrors for teleprompter glass, and records takes in your browser, so they never leave your device.
+            </p>
+            <ul className="tool__facts mono">
+              <li>Live camera</li>
+              <li>Records in browser</li>
+              <li>Free</li>
+            </ul>
+            <ButtonLink href={PRODUCTS.eyeline} variant="ink" external>Open Eyeline</ButtonLink>
+          </motion.li>
+
+          {/* 03 — honest placeholder */}
+          {["03"].map((n) => (
             <motion.li key={n} className="tool tool--soon" variants={card} transition={{ duration: 1, ease: EASE }}>
               <div className="tool__top">
                 <span className="mono tool__no">{n}</span>
@@ -72,11 +96,12 @@ export function Tools() {
 
       <style>{`
         .tools__head { display: grid; gap: 1.75em; max-width: 46em; margin-bottom: 4.5em; }
-        .shelf { list-style: none; display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: 1.25em; align-items: stretch; }
+        .shelf { list-style: none; display: grid; grid-template-columns: 1.2fr 1.2fr 0.85fr; gap: 1.25em; align-items: stretch; }
         .tool { position: relative; display: flex; flex-direction: column; gap: 1.4em; padding: 2em; border-radius: 1.5em; background: #faf9f5;
           box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 8%, transparent); transition: transform .5s var(--ease), box-shadow .5s var(--ease); }
         @media (hover: hover) and (pointer: fine) {
           .tool--sign:hover { transform: translateY(-6px); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 8%, transparent), 0 40px 70px -40px rgba(255,90,31,.45); }
+          .tool--eye:hover { transform: translateY(-6px); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 8%, transparent), 0 40px 70px -40px rgba(42,77,255,.45); }
         }
         .tool__top { display: flex; justify-content: space-between; align-items: center; }
         .tool__no { font-size: .8em; color: var(--muted); }
@@ -89,17 +114,18 @@ export function Tools() {
         .tool__brand { display: flex; align-items: center; gap: 1em; }
         .tool__brand img { width: 3.6em; height: 3.6em; }
         .tool__kind { font-size: .75em; color: var(--sign); text-transform: uppercase; letter-spacing: .08em; margin-top: .25em; }
+        .tool--eye .tool__kind { color: var(--eyeline); }
         .tool__desc { font-size: 1em; line-height: 1.55; }
         .tool__facts { list-style: none; display: flex; flex-wrap: wrap; gap: .5em; font-size: .72em; margin-top: auto; }
         .tool__facts li { padding: .45em .8em; border-radius: 99px; background: var(--bone-2); color: var(--ink-2); }
-        .tool--sign .btn { align-self: flex-start; }
+        .tool--sign .btn, .tool--eye .btn { align-self: flex-start; }
         .tool--soon { background: transparent; box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--ink) 14%, transparent); }
         .tool__tape { position: relative; height: 7.5em; border-radius: 1em; overflow: hidden; display: grid; place-items: center;
           background: repeating-linear-gradient(-45deg, color-mix(in srgb, var(--ink) 7%, transparent) 0 .9em, transparent .9em 1.8em); }
         .tool__tape span { font-family: var(--f-mono); font-size: .7em; letter-spacing: .16em; background: var(--tape); padding: .5em 1em; transform: rotate(-3deg); }
         .tool__link { font-size: .78em; color: var(--ink-2); margin-top: auto; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--tape-2); }
         .tool__link:hover { color: var(--ink); }
-        @media (max-width: 1023px) { .shelf { grid-template-columns: 1fr 1fr; } .tool--sign { grid-column: 1 / -1; } }
+        @media (max-width: 1023px) { .shelf { grid-template-columns: 1fr 1fr; } .tool--soon { grid-column: 1 / -1; } }
         @media (max-width: 600px) { .shelf { grid-template-columns: 1fr; } .tool { padding: 1.5em; } }
       `}</style>
     </section>
@@ -109,8 +135,8 @@ export function Tools() {
 /* ---------------- Principles (dark) ---------------- */
 const principles = [
   { k: "01", t: "One job, done properly", b: "Each tool solves a single everyday task from start to finish. No dashboards to learn, no settings to tune." },
-  { k: "02", t: "Private by default", b: "We keep as little of your data as the job allows. HazardSign signs your documents without them ever leaving your device." },
-  { k: "03", t: "Fair, local pricing", b: "Simple monthly prices in naira, paid securely by card. Cancel whenever you like." },
+  { k: "02", t: "Private by default", b: "We keep as little of your data as the job allows. HazardSign signs your documents and Eyeline records your takes without either ever leaving your device." },
+  { k: "03", t: "Fair, local pricing", b: "Free where we can, and simple monthly prices in naira where a tool costs to run, paid securely by card. Cancel whenever you like." },
   { k: "04", t: "Shipped, then sharpened", b: "Tools go out when they're useful, then improve every week based on how people actually use them." },
 ];
 
@@ -170,6 +196,7 @@ export function Closing() {
             <a href="#tools">Tools</a>
             <a href="#principles">How we build</a>
             <a href={PRODUCTS.hazardsign} target="_blank" rel="noreferrer">HazardSign AI</a>
+            <a href={PRODUCTS.eyeline} target="_blank" rel="noreferrer">Eyeline</a>
             <a href={GITHUB} target="_blank" rel="noreferrer">GitHub</a>
           </nav>
           <span className="mono foot__c">© 2026 Hazardsecurity</span>
